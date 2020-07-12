@@ -21,6 +21,6 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "jest && cat ./coverageReport/lcov.info | coveralls"
+    "test": "jest"
   }
 }

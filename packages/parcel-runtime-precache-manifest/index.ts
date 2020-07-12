@@ -16,13 +16,14 @@ export default new Runtime({
     if (!publicUrl.endsWith('/')) publicUrl += '/';
 
     for (const bundle of bundleGraph.getBundles()) {
+      let url = bundle.name;
       if (bundle.name.endsWith('index.html')) {
         // These should never have the `index.html` at the end
-        bundle.name = bundle.name.slice(0, -10);
+        url = url.slice(0, -10);
       }
       if (bundle.env.context !== 'service-worker') {
         manifest.push({
-          url: publicUrl + bundle.name,
+          url: publicUrl + url,
           revision: bundle.hashReference
         });
       }

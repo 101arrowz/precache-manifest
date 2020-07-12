@@ -33,7 +33,7 @@
     "prepack": "yarn preversion"
   },
   "dependencies": {
-    "parcel-runtime-precache-manifest": "^0.0.1"
+    "parcel-runtime-precache-manifest": "^0.0.2"
   },
   "peerDependencies": {
     "parcel": "^2.0.0-beta.1"
