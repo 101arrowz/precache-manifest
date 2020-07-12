@@ -1,0 +1,6 @@
+{
+  "extends": "@parcel/config-default",
+  "runtimes": {
+    "service-worker": ["...", "parcel-runtime-precache-manifest"]
+  }
+}

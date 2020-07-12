@@ -1,0 +1,7 @@
+{
+  "name": "my-pwa",
+  "description": "A PWA",
+  "dependencies": {
+    "parcel-runtime-precache-manifest": "0.0.1"
+  }
+}
