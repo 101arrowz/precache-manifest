@@ -6,7 +6,7 @@ A Parcel 2 plugin that generates a manifest for precaching assets
 In `.parcelrc`:
 ```json
 {
-  "extends": "parcel-config-precache-manifest"
+  "extends": ["@parcel/config-default", "parcel-config-precache-manifest"]
 }
 ```
 
