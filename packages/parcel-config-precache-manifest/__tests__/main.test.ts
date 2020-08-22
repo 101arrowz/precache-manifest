@@ -16,7 +16,7 @@ const parcel = new Parcel({
   defaultConfig: {
     ...defaultConfig,
     extends: ['@parcel/config-default'],
-    filePath: require.resolve('@parcel/config-default')
+    filePath: require.resolve('parcel-config-precache-manifest')
   },
   cacheDir,
   distDir: outDir
