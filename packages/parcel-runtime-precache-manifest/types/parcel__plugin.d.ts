@@ -20,6 +20,7 @@ type Bundle = {
   type: string;
   target: Target;
   env: Environment;
+  isInline: boolean;
 };
 
 type BundleGraph = {

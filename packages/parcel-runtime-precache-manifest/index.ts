@@ -21,7 +21,10 @@ export default new Runtime({
         // These should never have the `index.html` at the end
         url = url.slice(0, -10);
       }
-      if (bundle.env.context !== 'service-worker') {
+      if (
+        bundle.env.context !== 'service-worker' &&
+        !bundle.isInline // ignore bundles which are not outputted as separate files
+      ) {
         manifest.push({
           url: publicUrl + url,
           revision: bundle.hashReference
