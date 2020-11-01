@@ -28,13 +28,17 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
 To use the manifest manually and precache yourself:
 ```js
-const precacheVersion = self.__precacheManifest.map(p => p.revision).join('');
+const precacheVersion = self.__precacheManifest
+  .map(p => p.revision)
+  .join('');
 const precacheFiles = self.__precacheManifest.map(p => p.url);
 
 self.addEventListener('install', ev => {
   // Do not finish installing until every file in the app has been cached
   ev.waitUntil(
-    caches.open(precacheVersion).then(cache => cache.addAll(precacheFiles))
+    caches.open(precacheVersion).then(
+      cache => cache.addAll(precacheFiles)
+    )
   );
 });
 
@@ -42,7 +46,9 @@ self.addEventListener('install', ev => {
 self.addEventListener('activate', ev => {
   ev.waitUntil(
     caches.keys().then(keys => Promise.all(
-      keys.filter(k => k !== precacheVersion).map(k => caches.delete(k))
+      keys.filter(k => k !== precacheVersion).map(
+        k => caches.delete(k)
+      )
     ))
   );
 });
@@ -58,8 +64,9 @@ This plugin can be thought of as a port of [`workbox-webpack-plugin`'s `InjectMa
 ## Advanced: Filters
 By default, service workers will not be precached, since they are automatically cached by the browser until a new service worker is discovered. To prevent the caching of a specific type of file (say all `.png` files), you can filter the items in `self.__precacheManifest` at the top of the service worker itself:
 ```js
-self.__precacheManifest = self.__precacheManifest.filter(item => !/.png$/.test(item));
-
+self.__precacheManifest = self.__precacheManifest.filter(
+  item => !/\.png$/.test(item.url)
+);
 // Rest of your service worker code
 ```
 
