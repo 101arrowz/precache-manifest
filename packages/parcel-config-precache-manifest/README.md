@@ -58,7 +58,7 @@ This plugin can be thought of as a port of [`workbox-webpack-plugin`'s `InjectMa
 ## Advanced: Filters
 By default, service workers will not be precached, since they are automatically cached by the browser until a new service worker is discovered. To prevent the caching of a specific type of file (say all `.png` files), you can filter the items in `self.__precacheManifest` at the top of the service worker itself:
 ```js
-self.__precacheManifest = self.__precacheManifest.filter(item => !/.png$/.test(item));
+self.__precacheManifest = self.__precacheManifest.filter(item => !/.png$/.test(item.url));
 
 // Rest of your service worker code
 ```
