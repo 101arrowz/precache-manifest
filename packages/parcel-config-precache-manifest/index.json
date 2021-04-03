@@ -1,5 +1,3 @@
 {
-  "runtimes": {
-    "service-worker": ["...", "parcel-runtime-precache-manifest"]
-  }
+  "runtimes": ["...", "parcel-runtime-precache-manifest"]
 }

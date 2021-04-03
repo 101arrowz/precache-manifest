@@ -1,6 +1,6 @@
 {
   "name": "parcel-config-precache-manifest",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Parcel 2 plugin that generates a manifest for precaching assets",
   "main": "index.json",
   "author": "Arjun Barrett <arjunbarrett@gmail.com>",
@@ -16,7 +16,7 @@
   ],
   "engines": {
     "node": ">=10",
-    "parcel": ">2.0.0-beta.1"
+    "parcel": ">=2.0.0-beta.2"
   },
   "homepage": "https://github.com/101arrowz/precache-manifest/tree/master/packages/parcel-config-precache-manifest",
   "repository": {
@@ -34,9 +34,12 @@
     "prepack": "yarn preversion"
   },
   "dependencies": {
-    "parcel-runtime-precache-manifest": "^0.0.4"
+    "parcel-runtime-precache-manifest": "^0.0.5"
   },
   "peerDependencies": {
-    "parcel": ">2.0.0-beta.1"
+    "parcel": ">=2.0.0-beta.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-nightly.633"
   }
 }

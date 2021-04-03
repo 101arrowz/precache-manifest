@@ -13,13 +13,11 @@ const cacheDir = join(outDir, 'cache');
 
 const parcel = new Parcel({
   entries: [fp('index.html')],
-  defaultConfig: {
-    ...defaultConfig,
-    extends: ['@parcel/config-default'],
-    filePath: require.resolve('parcel-config-precache-manifest')
+  defaultConfig: require.resolve('@parcel/config-default'),
+  defaultTargetOptions: {
+    distDir: outDir
   },
-  cacheDir,
-  distDir: outDir
+  cacheDir
 });
 jest.setTimeout(120000); // Thanks, Parcel 2
 test('Integrated correctly', async () => {

@@ -1,6 +1,6 @@
 {
   "name": "parcel-runtime-precache-manifest",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Parcel v2 runtime that helps generate a manifest for precaching assets",
   "main": "lib/index.js",
   "author": "Arjun Barrett <arjunbarrett@gmail.com>",
@@ -15,7 +15,7 @@
   ],
   "engines": {
     "node": ">=10",
-    "parcel": ">2.0.0-beta.1"
+    "parcel": ">=2.0.0-beta.2"
   },
   "homepage": "https://github.com/101arrowz/precache-manifest/tree/master/packages/parcel-runtime-precache-manifest",
   "repository": {
@@ -34,6 +34,6 @@
     "preversion": "yarn lint"
   },
   "peerDependencies": {
-    "parcel": ">2.0.0-beta.1"
+    "parcel": ">=2.0.0-beta.2"
   }
 }

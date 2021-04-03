@@ -30,7 +30,7 @@ type BundleGraph = {
 declare module '@parcel/plugin' {
   export class Runtime {
     constructor(data: {
-      apply(data: { bundle: Bundle, bundleGraph: BundleGraph }): Async<SynthAsset>;
+      apply(data: { bundle: Bundle, bundleGraph: BundleGraph }): Async<SynthAsset | void>;
     });
   }
 }

@@ -8,13 +8,14 @@ type Precache = {
 export default new Runtime({
   async apply({
     bundle: {
-      target: { publicUrl }
+      target: { publicUrl },
+      env: { context }
     },
     bundleGraph
   }) {
+    if (context != 'service-worker') return;
     const manifest: Precache[] = [];
     if (!publicUrl.endsWith('/')) publicUrl += '/';
-
     for (const bundle of bundleGraph.getBundles()) {
       let url = bundle.name;
       if (bundle.name.endsWith('index.html')) {
@@ -34,7 +35,7 @@ export default new Runtime({
 
     return {
       filePath: 'precache-manifest.js',
-      code: `self.__precacheManifest = ${JSON.stringify(manifest)}`,
+      code: `self.__precacheManifest=${JSON.stringify(manifest)}`,
       isEntry: true
     };
   }
